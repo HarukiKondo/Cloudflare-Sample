@@ -7,6 +7,10 @@ Cloudflare（クラウドフレア）とは、CDNなどを提供するサービ�
 
 CDNを提供するサービスは複数ありますが、世界シェア1位を誇っているのがCloudflare。
 
+## Cloudflare Workers
+
+Cloudflare Workersは**サーバーレス・エッジコンピューティングサービス**です。
+
 ## Cloudflareのメリット
 
 - ページ表示の高速化ができる
@@ -21,6 +25,17 @@ CDNを提供するサービスは複数ありますが、世界シェア1位を�
 - Cloudflareがダウンするとサイトの利用ができない
 - WordPressを利用している場合は注意が必要
 - 適切に運用するには知識が必要
+
+## AWS LambdaやGCP Cloud Runとの比較
+Cloudflare Workersと似たコンセプトのサービスとしてAWS LambdaやGoogle Cloudの Cloud Runがあります。
+
+これらのサービスとの違いは、コンテナ仮想化を利用していない点です。
+
+LambdaやCloud Runはコンテナ仮想化を利用しています。一方、JavaScriptランタイムのV8を実質的な仮想化ソフトウェアとして利用しているのがCloudflare Workersの特徴です。
+
+**Cloudflare Workers** の場合はコンテナの起動を待つ必要がありません。
+
+従って、コールドスタートとホットスタートの概念はありません。言うならばCloudflare Workersは常にホットな状態。
 
 ## テンプレートプロジェクトの開始方法
 
@@ -127,3 +142,5 @@ wrangler generate projectname https://github.com/cloudflare/worker-template
 3. [Cloudflare workres 紹介ページ](https://developers.cloudflare.com/workers/)
 4. [Cloudflare workres Get Started](https://developers.cloudflare.com/workers/get-started/guide/)
 5. [Cloudflare workes チュートリアル](https://developers.cloudflare.com/workers/tutorials/)
+6. [Cloudflare Workersのチュートリアルをやってみた](https://dev.classmethod.jp/articles/cloudflare-workers-tutorial/)
+7. [Zenn - 入門Cloudflare Workers](https://zenn.dev/moutend/articles/97c98a277f4bae)
